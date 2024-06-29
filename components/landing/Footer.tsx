@@ -42,8 +42,8 @@ export function Footer() {
           </a>
         </div>
 
-        <div className="">
-          <p className="font-display text-[40vw] -tracking-widest opacity-80 dark:text-card-foreground sm:text-[min(35vw,300px)] md:absolute md:-bottom-1/4">
+        <div className="select-none">
+          <p className="font-display text-[40vw] -tracking-widest opacity-85 dark:text-card-foreground sm:text-[min(35vw,300px)] md:absolute md:-bottom-1/4">
             Lingo
           </p>
           <div className="relative -right-3 top-12 ml-auto w-1/3 drop-shadow-2xl saturate-[0.7] dark:hue-rotate-[50deg] max-md:hidden">

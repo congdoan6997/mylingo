@@ -52,6 +52,9 @@ const config = {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
         },
+        highlight: {
+          DEFAULT: "hsl(var(--highlight))",
+        },
         super: {
           DEFAULT: "hsl(var(--super))",
           foreground: "hsl(var(--super-foreground))",
@@ -94,11 +97,23 @@ const config = {
           from: { transform: "translateX(0%)" },
           to: { transform: "translateX(-100%)" },
         },
+        "footer-pulse": {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.1)",
+          },
+          "100%": {
+            transform: "scale(1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "footer-marquee": "footer-marquee 20s linear infinite",
+        "footer-pulse": "footer-pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },
