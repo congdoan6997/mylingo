@@ -30,7 +30,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
       toggle={() => setTheme(isDark ? THEME_LIGHT : THEME_DARK)}
       className={className}
       forceMotion
-      // fixes typescript error
+      // TODO - fixes typescript error
       onPointerEnterCapture={undefined}
       onPointerLeaveCapture={undefined}
     />

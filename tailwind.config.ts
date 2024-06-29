@@ -34,14 +34,17 @@ const config = {
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
+          depth: 'hsl(var(--primary-depth))',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
+          depth: 'hsl(var(--secondary-depth))',
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
+          depth: 'hsl(var(--destructive-depth))',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted))',
@@ -51,9 +54,18 @@ const config = {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
+        super: {
+          DEFAULT: 'hsl(var(--super))',
+          foreground: 'hsl(var(--super-foreground))',
+          depth: 'hsl(var(--super-depth))',
+        },
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
+        },
+        disabled: {
+          DEFAULT: 'hsl(var(--disabled))',
+          foreground: 'hsl(var(--disabled-foreground))',
         },
         card: {
           DEFAULT: 'hsl(var(--card))',
