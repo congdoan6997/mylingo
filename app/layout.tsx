@@ -3,6 +3,7 @@ import { fonts } from '@/styles/fonts'
 import { sharedMetadata } from '@/config/metadata'
 import { ThemeProvider } from '@/components/theme/provider'
 import '@/styles/globals.css'
+import { Analytics } from '@/components/Analytics'
 
 export const metadata: Metadata = {
   ...sharedMetadata,
@@ -25,6 +26,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
