@@ -33,6 +33,8 @@ const config = {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           depth: "hsl(var(--primary-depth))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -54,6 +56,8 @@ const config = {
         },
         highlight: {
           DEFAULT: "hsl(var(--highlight))",
+          foreground: "hsl(var(--highlight-foreground))",
+          depth: "hsl(var(--highlight-depth))",
         },
         super: {
           DEFAULT: "hsl(var(--super))",
@@ -67,6 +71,9 @@ const config = {
         disabled: {
           DEFAULT: "hsl(var(--disabled))",
           foreground: "hsl(var(--disabled-foreground))",
+        },
+        loading: {
+          DEFAULT: "hsl(var(--loading))",
         },
         card: {
           DEFAULT: "hsl(var(--card))",
@@ -113,7 +120,8 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "footer-marquee": "footer-marquee 20s linear infinite",
-        "footer-pulse": "footer-pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "footer-pulse": "footer-pulse 2s ease-in-out infinite",
+        "spin-slow": "spin 3s linear infinite",
       },
     },
   },
