@@ -1,5 +1,5 @@
 import LogoSVG from "@/public/logo.svg"
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="px-1">
       <div className="relative mx-auto flex h-80 flex-col justify-between overflow-hidden rounded-4xl bg-primary-depth pt-0 text-primary-foreground dark:bg-card sm:h-96 sm:w-11/12 lg:h-[26rem]">
