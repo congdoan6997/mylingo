@@ -2,7 +2,8 @@ import { ThemeToggle } from "@/components/theme/toggle"
 import { Button } from "@/components/ui/button"
 
 import LogoSVG from "@/public/logo.svg"
-import GithubSVG from "@/public/github.svg"
+import GithubSVG from "@/public/img/github.svg"
+import NextLink from "next/link"
 
 export default function Header() {
   return (
@@ -19,28 +20,24 @@ export default function Header() {
               <GithubSVG className="size-6" />
             </a>
           </Button>
-
-            <ThemeToggle />
-
+          <ThemeToggle />
         </div>
-        <div className="flex flex-col items-center gap-1 px-[6px] text-2xl sm:text-3xl lg:text-4xl">
-          <LogoSVG className="w-[1.5em]" />
-          <p className="font-display -tracking-widest max-sm:hidden">Lingo</p>
-        </div>
+        <NextLink
+          href="/"
+          title="Lingo app"
+          className="group flex h-16 w-14 flex-col items-center gap-1 rounded-b-3xl bg-secondary/30 px-[6px] pt-2 text-2xl transition-colors hover:bg-primary/25 dark:bg-card dark:hover:bg-border/70 sm:size-32 sm:rounded-b-4xl sm:pt-4 sm:text-3xl lg:w-36 lg:text-4xl"
+        >
+          <LogoSVG className="w-[1.5em] group-hover:animate-bounce" />
+          <p className="font-display -tracking-widest max-sm:sr-only">Lingo</p>
+        </NextLink>
         <div className="flex flex-1 items-center justify-end">
+          {/* TODO: add login clerk */}
           <Button variant="ghost">Login</Button>
         </div>
       </div>
 
       <div className="fixed bottom-4 right-4 z-50 sm:hidden">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="size-12 border border-solid border-border bg-card/40 text-2xl backdrop-blur-lg"
-          asChild
-        >
-          <ThemeToggle  />
-        </Button>
+        <ThemeToggle className="size-12 border border-solid border-border bg-card/40 backdrop-blur-lg" />
       </div>
     </header>
   )

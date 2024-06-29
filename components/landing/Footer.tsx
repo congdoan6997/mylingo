@@ -1,35 +1,37 @@
+import NextLink from "next/link"
+import { Asterisk, ArrowDown } from "lucide-react"
 import LogoSVG from "@/public/logo.svg"
+import { MotionDiv } from "../motion"
+import AnimatedTitle from "../motion/AnimatedTitle"
 export default function Footer() {
   return (
-    <footer className="px-1">
-      <div className="relative mx-auto flex h-80 flex-col justify-between overflow-hidden rounded-4xl bg-primary-depth pt-0 text-primary-foreground dark:bg-card sm:h-96 sm:w-11/12 lg:h-[26rem]">
+    <footer className="space-y-4 px-1 pb-4">
+      <MotionDiv
+        initial={{ y: "10%", scale: 0.95, opacity: 0 }}
+        whileInView={{ y: "0%", scale: 1, opacity: 1 }}
+        transition={{ duration: 0.4 }}
+        viewport={{ once: true }}
+        className="relative mx-auto flex h-80 flex-col justify-between overflow-hidden rounded-4xl bg-primary-depth/90 text-background dark:bg-card sm:h-96 lg:h-[26rem]"
+      >
         <div className="flex border-b-2 border-border/70 dark:border-card dark:bg-primary max-md:flex-col-reverse">
           <div className="group flex w-full flex-1 gap-12 overflow-hidden whitespace-nowrap border-border/70 py-2 text-lg capitalize max-md:border-t-2 sm:text-2xl md:border-r-2 md:py-4">
             <p className="flex animate-footer-marquee items-center gap-12 group-hover:paused">
               <span>start your language journey here.</span>
-              <span aria-hidden="true">🡳</span>
+              <ArrowDown className="size-[1.5em]" aria-hidden="true" strokeWidth={2.25} />
               <span>learn anytime, learn anywhere.</span>
-              <span aria-hidden="true">✱</span>
+              <Asterisk className="size-[1.5em]" aria-hidden="true" strokeWidth={2.25} />
             </p>
-
-            <p
-              className="flex animate-footer-marquee items-center gap-12 group-hover:paused"
-              aria-hidden="true"
-            >
+            <p className="flex animate-footer-marquee items-center gap-12 group-hover:paused">
               <span>start your language journey here.</span>
-              <span>🡳</span>
+              <ArrowDown className="size-[1.5em]" aria-hidden="true" strokeWidth={2.25} />
               <span>learn anytime, learn anywhere.</span>
-              <span>✱</span>
+              <Asterisk className="size-[1.5em]" aria-hidden="true" strokeWidth={2.25} />
             </p>
-
-            <p
-              className="flex animate-footer-marquee items-center gap-12 group-hover:paused"
-              aria-hidden="true"
-            >
+            <p className="flex animate-footer-marquee items-center gap-12 group-hover:paused">
               <span>start your language journey here.</span>
-              <span>🡳</span>
+              <ArrowDown className="size-[1.5em]" aria-hidden="true" strokeWidth={2.25} />
               <span>learn anytime, learn anywhere.</span>
-              <span>✱</span>
+              <Asterisk className="size-[1.5em]" aria-hidden="true" strokeWidth={2.25} />
             </p>
           </div>
 
@@ -42,16 +44,32 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="select-none">
-          <p className="font-display text-[40vw] -tracking-widest opacity-85 dark:text-card-foreground sm:text-[min(35vw,300px)] md:absolute md:-bottom-1/4">
+        <div className="select-none flex-grow overflow-hidden">
+          <AnimatedTitle className="md:absolute md:-bottom-1/4 md:left-0 md:translate-x-0">
+          <p className="pr-6 font-display text-[min(35vw,300px)] -tracking-widest dark:text-card-foreground">
             Lingo
           </p>
-          <div className="relative -right-3 top-12 ml-auto w-1/3 drop-shadow-2xl saturate-[0.7] dark:hue-rotate-[50deg] max-md:hidden">
-            <LogoSVG />
-          </div>
+          </AnimatedTitle>
+          <MotionDiv
+            className="relative ml-auto flex h-full w-1/3 flex-col justify-end max-md:hidden"
+            initial={{ y: '95%', x: '2%' }}
+            whileInView={{ y: '15%' }}
+            transition={{ type: 'spring', duration: 1.2 }}
+            viewport={{ margin: '10% 0% 0% 0%' }}
+          >
+            <div className="drop-shadow-2xl saturate-[0.7] dark:hue-rotate-[50deg]">
+              <LogoSVG />
+            </div>
+          </MotionDiv>
         </div>
-      </div>
-      <p className="my-4 px-1 text-center text-sm">
+{/* TODO clerk login */}
+        <div className="absolute right-1/4 top-1/3 md:right-1/3 md:top-[30%]">
+          <button className="rounded-full">
+            <StartCTA />
+          </button>
+        </div>
+      </MotionDiv>
+      <p className="text-center max-sm:text-sm">
         © 2024 — Lingo by{" "}
         <a
           href="https://github.com/congdoan6997"
@@ -71,5 +89,17 @@ export default function Footer() {
         .
       </p>
     </footer>
+  )
+}
+
+
+function StartCTA() {
+  return (
+    <span className="group relative block size-20 rounded-inherit sm:size-28 sm:text-lg lg:size-32">
+      <span className="absolute inset-0 animate-footer-pulse rounded-inherit bg-highlight group-hover:paused" />
+      <span className="absolute inset-0 flex items-center justify-center font-bold uppercase underline decoration-wavy underline-offset-2 transition-transform duration-300 ease-out group-hover:scale-125">
+        start
+      </span>
+    </span>
   )
 }
