@@ -1,14 +1,14 @@
-'use client'
+"use client"
 
-import { useTheme } from 'next-themes'
-import { useEffect, useState, type HTMLProps } from 'react'
-import { Within } from '@theme-toggles/react'
-import { THEME_DARK, THEME_LIGHT } from '@/components/theme/constants'
+import { useTheme } from "next-themes"
+import { useEffect, useState, type HTMLProps } from "react"
+import { Within } from "@theme-toggles/react"
+import { THEME_DARK, THEME_LIGHT } from "@/components/theme/constants"
 
-import '@theme-toggles/react/css/Within.css'
+import "@theme-toggles/react/css/Within.css"
 
 type ThemeToggleProps = {
-  className?: HTMLProps<HTMLElement>['className']
+  className?: HTMLProps<HTMLElement>["className"]
 }
 
 export function ThemeToggle({ className }: ThemeToggleProps) {
@@ -25,7 +25,7 @@ export function ThemeToggle({ className }: ThemeToggleProps) {
   return (
     <Within
       duration={500}
-      placeholder={isDark ? '🌙' : '☀️'}
+      placeholder={isDark ? "🌙" : "☀️"}
       toggled={isDark}
       toggle={() => setTheme(isDark ? THEME_LIGHT : THEME_DARK)}
       className={className}
