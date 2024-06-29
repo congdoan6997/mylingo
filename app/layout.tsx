@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { fonts } from '@/styles/fonts'
 import { sharedMetadata } from '@/config/metadata'
+import { ThemeProvider } from '@/components/theme/provider'
 import '@/styles/globals.css'
 
 export const metadata: Metadata = {
@@ -19,8 +20,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
-      <body className={`${fonts} font-sans`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${fonts} font-sans`}>
+        <ThemeProvider attribute="class" enableSystem disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
