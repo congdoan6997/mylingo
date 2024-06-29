@@ -1,8 +1,4 @@
-import { Gabarito, Capriola, Kodchasan, Unbounded } from 'next/font/google'
-
-const kod = Kodchasan({ variable: '--font-kod', subsets: ['latin'], weight: ['400', '700'] })
-
-const unbounded = Unbounded({ variable: '--font-unb', subsets: ['latin'] })
+import { Gabarito, Capriola } from 'next/font/google'
 
 const capriola = Capriola({ variable: '--font-capriola', subsets: ['latin'], weight: '400' })
 
@@ -14,4 +10,4 @@ const gabarito = Gabarito({
   fallback: ['system-ui', 'sans-serif'],
 })
 
-export const fonts = `${gabarito.variable} ${capriola.variable} ${unbounded.variable} ${kod.variable}`
+export const fonts = `${gabarito.variable} ${capriola.variable}`
