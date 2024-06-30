@@ -44,25 +44,25 @@ export default function Footer() {
           </a>
         </div>
 
-        <div className="select-none flex-grow overflow-hidden">
+        <div className="flex-grow select-none overflow-hidden">
           <AnimatedTitle className="md:absolute md:-bottom-1/4 md:left-0 md:translate-x-0">
-          <p className="pr-6 font-display text-[min(35vw,300px)] -tracking-widest dark:text-card-foreground">
-            Lingo
-          </p>
+            <p className="pr-6 font-display text-[min(35vw,300px)] -tracking-widest dark:text-card-foreground">
+              Lingo
+            </p>
           </AnimatedTitle>
           <MotionDiv
             className="relative ml-auto flex h-full w-1/3 flex-col justify-end max-md:hidden"
-            initial={{ y: '95%', x: '2%' }}
-            whileInView={{ y: '15%' }}
-            transition={{ type: 'spring', duration: 1.2 }}
-            viewport={{ margin: '10% 0% 0% 0%' }}
+            initial={{ y: "95%", x: "2%" }}
+            whileInView={{ y: "15%" }}
+            transition={{ type: "spring", duration: 1.2 }}
+            viewport={{ margin: "10% 0% 0% 0%" }}
           >
             <div className="drop-shadow-2xl saturate-[0.7] dark:hue-rotate-[50deg]">
               <LogoSVG />
             </div>
           </MotionDiv>
         </div>
-{/* TODO clerk login */}
+        {/* TODO clerk login */}
         <div className="absolute right-1/4 top-1/3 md:right-1/3 md:top-[30%]">
           <button className="rounded-full">
             <StartCTA />
@@ -91,7 +91,6 @@ export default function Footer() {
     </footer>
   )
 }
-
 
 function StartCTA() {
   return (

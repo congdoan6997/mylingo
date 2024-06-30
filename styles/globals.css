@@ -1,9 +1,7 @@
-/* @tailwind base; */
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-@import "tailwindcss/utilities";
-
-@import "@theme-toggles/react/css/Around.css";
+/* @import './clerk.css'; */
+@tailwind utilities;
 
 @layer base {
   :root {
