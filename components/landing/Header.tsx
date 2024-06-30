@@ -1,9 +1,9 @@
+import NextLink from "next/link"
 import { ThemeToggle } from "@/components/theme/toggle"
 import { Button } from "@/components/ui/button"
 
 import LogoSVG from "@/public/logo.svg"
 import GithubSVG from "@/public/img/github.svg"
-import NextLink from "next/link"
 
 export default function Header() {
   return (

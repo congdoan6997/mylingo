@@ -1,8 +1,9 @@
 import NextLink from "next/link"
 import { Asterisk, ArrowDown } from "lucide-react"
+import { MotionDiv } from "@/components/motion"
+import AnimatedTitle from "@/components/motion/AnimatedTitle"
+
 import LogoSVG from "@/public/logo.svg"
-import { MotionDiv } from "../motion"
-import AnimatedTitle from "../motion/AnimatedTitle"
 export default function Footer() {
   return (
     <footer className="space-y-4 px-1 pb-4">
