@@ -1,3 +1,4 @@
+import { Fluency } from "@/components/landing/Fluency"
 import Hero from "@/components/landing/Hero"
 import Languages from "@/components/landing/Languages"
 import Metrics from "@/components/landing/Metrics"
@@ -7,7 +8,9 @@ export default function Home() {
     <>
       <Hero />
       <Languages />
-      <Metrics>hello</Metrics>
+      <Metrics>
+        <Fluency />
+      </Metrics>
     </>
   )
 }

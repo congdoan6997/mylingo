@@ -70,6 +70,7 @@ export default function Metrics({ children }: PropsWithChildren) {
             offset={20}
             progress={scrollYProgress}
             suffix="%"
+            last
           >
             <FaceThreeSVG />
           </MetricsItem>
@@ -78,7 +79,7 @@ export default function Metrics({ children }: PropsWithChildren) {
           <div className="">{children}</div>
         </li>
       </ul>
-      <motion.div className="-z-1 fixed inset-0 bg-primary-dark" style={{ opacity }} />
+      <motion.div className="fixed inset-0 -z-10 bg-primary-dark" style={{ opacity }} />
     </section>
   )
 }

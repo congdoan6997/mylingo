@@ -44,4 +44,9 @@ export const languages = [
     flag: "de",
     word: "Hallo",
   },
+  {
+    title: "Vietnam",
+    flag: "vn",
+    word: "Xin chào",
+  },
 ]
