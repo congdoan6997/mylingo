@@ -10,6 +10,7 @@
     "prettier": "prettier -w ."
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.1.6",
     "@radix-ui/react-aspect-ratio": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@theme-toggles/react": "^4.1.0",

@@ -4,6 +4,8 @@ import { MotionDiv } from "@/components/motion"
 import AnimatedTitle from "@/components/motion/AnimatedTitle"
 
 import LogoSVG from "@/public/logo.svg"
+import { ClerkLoaded, SignUpButton, SignedIn, SignedOut } from "@clerk/nextjs"
+
 export default function Footer() {
   return (
     <footer className="space-y-4 px-1 pb-4">
@@ -63,12 +65,22 @@ export default function Footer() {
             </div>
           </MotionDiv>
         </div>
-        {/* TODO clerk login */}
-        <div className="absolute right-1/4 top-1/3 md:right-1/3 md:top-[30%]">
-          <button className="rounded-full">
-            <StartCTA />
-          </button>
-        </div>
+        <ClerkLoaded>
+          <div className="absolute right-1/4 top-1/3 md:right-1/3 md:top-[30%]">
+            <SignedOut>
+              <SignUpButton mode="modal">
+                <button className="rounded-full">
+                  <StartCTA />
+                </button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <NextLink href="/learn" className="rounded-full">
+                <StartCTA />
+              </NextLink>
+            </SignedIn>
+          </div>
+        </ClerkLoaded>
       </MotionDiv>
       <p className="text-center max-sm:text-sm">
         © 2024 — Lingo by{" "}

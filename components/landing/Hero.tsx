@@ -1,6 +1,7 @@
-import NextLink from "next/link"
 import type { Variants } from "framer-motion"
 import { Globe } from "lucide-react"
+import NextLink from "next/link"
+import { ClerkLoaded, SignedIn, SignedOut, SignInButton, SignUpButton } from "@clerk/nextjs"
 import { Button } from "@/components/ui/button"
 import { MotionDiv } from "@/components/motion"
 import AnimatedTitle from "@/components/motion/AnimatedTitle"
@@ -60,19 +61,40 @@ export default function Hero() {
         </h1>
       </AnimatedTitle>
       <div className="mx-auto min-h-40 max-w-80 py-12">
-        {/* TODO add clerk */}
-        <AnimatedList variants={list} className="flex flex-col gap-3">
-          <AnimatedListItem variants={item}>
-            <Button className="w-full" variant="primary" size={"lg"}>
-              <span className="truncate">Get Started</span>
-            </Button>
-          </AnimatedListItem>
-          <AnimatedListItem variants={item}>
-            <Button className="w-full text-secondary" size={"lg"}>
-              <span className="truncate">I already have an account</span>
-            </Button>
-          </AnimatedListItem>
-        </AnimatedList>
+        <ClerkLoaded>
+          <SignedOut>
+            <AnimatedList variants={list} className="flex flex-col gap-3">
+              <AnimatedListItem variants={item}>
+                <SignUpButton mode="modal">
+                  <Button className="w-full" variant="primary" size={"lg"}>
+                    <span className="truncate">Get Started</span>
+                  </Button>
+                </SignUpButton>
+              </AnimatedListItem>
+              <AnimatedListItem variants={item}>
+                <SignInButton mode="modal">
+                  <Button className="w-full text-secondary" size={"lg"}>
+                    <span className="truncate">I already have an account</span>
+                  </Button>
+                </SignInButton>
+              </AnimatedListItem>
+            </AnimatedList>
+          </SignedOut>
+          <SignedIn>
+            <MotionDiv
+              initial="hidden"
+              whileInView="visible"
+              variants={item}
+              transition={{ delay: 0.5 }}
+            >
+              <Button variant="primary" size="lg" className="w-full" asChild>
+                <NextLink href="/learn" className="truncate">
+                  Continue Learning
+                </NextLink>
+              </Button>
+            </MotionDiv>
+          </SignedIn>
+        </ClerkLoaded>
       </div>
 
       <div className="z-1 absolute -left-[2%] top-[13%] sm:left-[10%]">
