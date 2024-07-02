@@ -1,6 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
-@import "./clerk.css";
+/* TODO fix error css imoport */
+/* @import "./clerk.css"; */
 @tailwind utilities;
 
 @layer base {

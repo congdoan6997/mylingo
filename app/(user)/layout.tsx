@@ -1,3 +1,4 @@
+import SideMenu from "@/components/user/SideMenu"
 import { type PropsWithChildren } from "react"
 type UserLayoutProps = PropsWithChildren<{
   userProgress: React.ReactNode
@@ -11,7 +12,9 @@ export default function UserLayout({ children, userProgress }: UserLayoutProps) 
           <div className="w-full max-w-[300px]">{userProgress}</div>
           Mobile
         </div>
-        <div className="fixed inset-y-0 w-[inherit] border-r-2 max-sm:hidden">sidemenu</div>
+        <div className="fixed inset-y-0 w-[inherit] border-r-2 max-sm:hidden">
+          <SideMenu />
+        </div>
       </header>
       <main className="flex flex-1 flex-row gap-6 px-6 pb-24 pt-6 sm:pb-6 lg:gap-12">
         {children}
