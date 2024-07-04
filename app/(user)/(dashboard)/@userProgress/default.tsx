@@ -1,3 +1,5 @@
+import UserProgress from "@/components/user/UserProgress"
+
 export default function UserProgressPage() {
-  return <div>UserProgress</div>
+  return <UserProgress />
 }

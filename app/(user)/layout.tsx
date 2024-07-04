@@ -1,16 +1,20 @@
+import MobileSheet from "@/components/user/MobileSheet"
 import SideMenu from "@/components/user/SideMenu"
+import UserProgress from "@/components/user/UserProgress"
 import { type PropsWithChildren } from "react"
 type UserLayoutProps = PropsWithChildren<{
-  userProgress: React.ReactNode
+  userProgressPlain: React.ReactNode
 }>
 
-export default function UserLayout({ children, userProgress }: UserLayoutProps) {
+export default function UserLayout({ children, userProgressPlain }: UserLayoutProps) {
   return (
     <div className="container flex flex-grow flex-col px-0 sm:flex-row">
       <header className="top-0 z-10 max-sm:sticky sm:w-20 lg:w-64">
         <div className="flex items-center justify-between border-b-2 border-primary-depth bg-primary p-2 text-primary-foreground/80 sm:hidden">
-          <div className="w-full max-w-[300px]">{userProgress}</div>
-          Mobile
+          <div className="w-full max-w-[300px]">{userProgressPlain}</div>
+          <MobileSheet>
+            <SideMenu />
+          </MobileSheet>
         </div>
         <div className="fixed inset-y-0 w-[inherit] border-r-2 max-sm:hidden">
           <SideMenu />
